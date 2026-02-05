@@ -1,3 +1,8 @@
+CREATE TABLE Role(
+    role_id INT AUTO_INCREMENT PRIMARY KEY,
+    role_name VARCHAR(50) NOT NULL,
+);
+
 Create Table Orders(
     order_id INT AUTO_INCREMENT,
     user_id INT NOT NULL,
