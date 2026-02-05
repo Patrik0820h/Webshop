@@ -5,4 +5,35 @@ CREATE TABLE Users(
     password VARCHAR(50) NOT NULL;
     phonenumber INT (8) NOT NULL,
     addres VARCHAR(50) NOT NULL;
-)
+);
+
+CREATE TABLE Role(
+    role_id INT AUTO_INCREMENT PRIMARY KEY,
+    role_name VARCHAR(50) NOT NULL,
+);
+
+Create Table Orders(
+    order_id INT AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    product_id INT NOT NULL,
+    quantity INT NOT NULL,
+    order_date TIMESTAMP,
+    PRIMARY KEY (order_id)
+    FOREIGN KEY (user_id) REFERENCES Users(user_id),
+    FOREIGN KEY (product_id) REFERENCES Products(product_id)
+    FOREIGN KEY (paymethod_id) REFERENCES PaymentMethods(paymethod_id)
+);
+
+Create Table Payment(
+    payment_id INT AUTO_INCREMENT,
+    paymethod_id INT NOT NULL,
+    PRIMARY KEY (payment_id),
+    FOREIGN KEY (payment_id) REFERENCES Paymethod(s)
+    FOREIGN KEY (paymethod_id) REFERENCES Paymethod(paymethod_id)
+);
+
+Create Table Paymethod(
+    paymethod_id INT AUTO_INCREMENT,
+    method_name VARCHAR(50) NOT NULL,
+    PRIMARY KEY (paymethod_id)
+);
