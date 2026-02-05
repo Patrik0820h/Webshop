@@ -1,29 +1,25 @@
 Create Table Orders(
-    order_id INT (10),
-    quantity INT(4),
+    order_id INT AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    product_id INT NOT NULL,
+    quantity INT NOT NULL,
     order_date TIMESTAMP,
-    product_id INT (10),
     PRIMARY KEY (order_id)
-    FOREIGN KEY (product_id) REFERENCES Products(/*másik tábla primary key"*/)
+    FOREIGN KEY (user_id) REFERENCES Users(user_id),
+    FOREIGN KEY (product_id) REFERENCES Products(product_id)
+    FOREIGN KEY (paymethod_id) REFERENCES PaymentMethods(paymethod_id)
 );
 
-
-
 Create Table Payment(
-    payment_id INT (10),
-
-
-    PRIMARY KEY (payment_id)
+    payment_id INT AUTO_INCREMENT,
+    paymethod_id INT NOT NULL,
+    PRIMARY KEY (payment_id),
     FOREIGN KEY (payment_id) REFERENCES Paymethod(s)
+    FOREIGN KEY (paymethod_id) REFERENCES Paymethod(paymethod_id)
 );
 
 Create Table Paymethod(
-
-    bank_accounts varchar (255),
-    paypal varchar (255),
-    
-
-
-
-    PRIMARY KEY()
+    paymethod_id INT AUTO_INCREMENT,
+    method_name VARCHAR(50) NOT NULL,
+    PRIMARY KEY (paymethod_id)
 );
