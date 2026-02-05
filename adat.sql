@@ -1,3 +1,12 @@
+CREATE TABLE Users(
+    user_name VARCHAR(50) NOT NULL,
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(50) NOT NULL,
+    password VARCHAR(50) NOT NULL;
+    phonenumber INT (8) NOT NULL,
+    addres VARCHAR(50) NOT NULL;
+);
+
 CREATE TABLE Role(
     role_id INT AUTO_INCREMENT PRIMARY KEY,
     role_name VARCHAR(50) NOT NULL,
