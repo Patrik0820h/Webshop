@@ -1,5 +1,6 @@
 CREATE TABLE Users(
-    user_name VARCHAR(50) NOT NULL,
+    user_first_name VARCHAR(50) NOT NULL,
+    user_last_name VARCHAR(50) NOT NULL,
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(50) NOT NULL,
     password VARCHAR(50) NOT NULL;
