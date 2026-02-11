@@ -2,10 +2,10 @@ CREATE TABLE Users(
     user_first_name VARCHAR(50) NOT NULL,
     user_last_name VARCHAR(50) NOT NULL,
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(50) NOT NULL,
+    user_email VARCHAR(50) NOT NULL,
     password VARCHAR(50) NOT NULL;
-    phonenumber INT (8) NOT NULL,
-    addres VARCHAR(50) NOT NULL;
+    phone_number INT (8) NOT NULL,
+    address_of_order VARCHAR(50) NOT NULL;
 );
 
 CREATE TABLE Role(
@@ -18,7 +18,7 @@ Create Table Orders(
     order_id INT AUTO_INCREMENT,
     user_id INT NOT NULL,
     product_id INT NOT NULL,
-    quantity INT NOT NULL,
+    amount INT NOT NULL,
     order_date TIMESTAMP,
     PRIMARY KEY (order_id)
     FOREIGN KEY (user_id) REFERENCES Users(user_id),
