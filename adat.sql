@@ -20,6 +20,7 @@ Create Table Orders(
     product_id INT NOT NULL,
     amount INT NOT NULL,
     order_date TIMESTAMP,
+    order_manufacterer VARCHAR(50) NOT NULL,
     PRIMARY KEY (order_id)
     FOREIGN KEY (user_id) REFERENCES Users(user_id),
     FOREIGN KEY (product_id) REFERENCES Products(product_id)
